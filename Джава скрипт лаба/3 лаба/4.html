@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+font-size:50px;
+text-align:center;
+}
+table {
+border: 3px red solid;
+margin-left:auto;
+margin-right:auto;
+
+
+}
+td {
+border: 3px green dashed;
+padding: 5px;
+}
+
+</style>
+
+<script>
+'Use strict'
+let time1 = new Date();
+let time2 = time1.getMonth() + 1;
+document.write('<table>');
+document.write('<tr>' + '<td>' + 'Год' + '</td>' + '<td>' + time1.getFullYear() + '</td>' + '</tr>');
+document.write('<tr>' + '<td>' + 'Месяц' + '</td>' + '<td>' + time2 + '</td>' + '</tr>');
+document.write('<tr>' + '<td>' + 'День' + '</td>' + '<td>' + time1.getDate() + '</td>' + '</tr>');
+document.write('<tr>' + '<td>' + 'Час' + '</td>' + '<td>' + time1.getHours() + '</td>' + '</tr>');
+document.write('<tr>' + '<td>' + 'Минуты' + '</td>' + '<td>' + time1.getMinutes() + '</td>' + '</tr>');
+document.write('<tr>' + '<td>' + 'Секунды' + '</td>' + '<td>' + time1.getSeconds() + '</td>' + '</tr>');
+document.write('</table>')
+</script>
+</head>
+<body>
+
+</body>
+</html>

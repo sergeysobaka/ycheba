@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<style>
+		table{
+			border:none;
+			text-align: center;
+			border-collapse: collapse;
+		}
+		td{
+			border:2px solid green;
+		}
+		tr:first-child, td:first-child
+		{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+<table>
+	<script type="text/javascript">
+		let a=prompt('Напиши целое число');
+		let x = new Number(a);
+		let  b=prompt('Напиши дробное число');
+		let y = new Number(b);
+		document.write('<tr>');
+		document.write('<td>Число</td>');
+		document.write('<td>Метод</td>');
+		document.write('<td>Результат</td>');
+		document.write('<td>Описание метода</td>');
+		document.write('</tr>');
+
+		document.write('<tr>');
+		document.write('<td>' + x +'</td>');
+		document.write('<td>toExponential(2)</td>');
+		document.write('<td>' + x.toExponential(2) + '</td>');
+		document.write('<td>представляет число в экспоненциальной форме, c 2 цифрами после точки</td>');
+		document.write('</tr>');
+
+		document.write('<tr>');
+		document.write('<td>' + x +'</td>');
+		document.write('<td>toFixed(2)</td>');
+		document.write('<td>' + x.toFixed(2) + '</td>');
+		document.write('<td>представляет число в форме с фиксированным количеством цифр после точки, c 2 цифрами после точки</td>');
+		document.write('</tr>');
+
+		document.write('<tr>');
+		document.write('<td>' + x +'</td>');
+		document.write('<td> toPrecision(2) </td>');
+		document.write('<td>' + x.toPrecision(2) + '</td>');
+		document.write('<td>представляет число с заданным общим количеством значащих цифр 2</td>');
+		document.write('</tr>');
+
+		document.write('<tr>');
+		document.write('<td>' + x +'</td>');
+		document.write('<td>toString(2)</td>');
+		document.write('<td>' + x.toString(2) + '</td>');
+		document.write('<td>возвращает строковое представление числа в двоичной системе исчисления</td>');
+		document.write('</tr>');
+		// ДРОБНОЕ ЧИСЛО
+		document.write('<tr>');
+		document.write('<td>' + y +'</td>');
+		document.write('<td>toExponential(2)</td>');
+		document.write('<td>' + y.toExponential(2) + '</td>');
+		document.write('<td>представляет число в экспоненциальной форме, c 2 цифрами после точки</td>');
+		document.write('</tr>');
+
+		document.write('<tr>');
+		document.write('<td>' + y +'</td>');
+		document.write('<td>toFixed(2)</td>');
+		document.write('<td>' + y.toFixed(2) + '</td>');
+		document.write('<td>представляет число в форме с фиксированным количеством цифр после точки, c 2 цифрами после точки</td>');
+		document.write('</tr>');
+
+		document.write('<tr>');
+		document.write('<td>' + y +'</td>');
+		document.write('<td>toPrecision(2)</td>');
+		document.write('<td>' + y.toPrecision(2) + '</td>');
+		document.write('<td>представляет число с заданным общим количеством значащих цифр 2</td>');
+		document.write('</tr>');
+
+		document.write('<tr>');
+		document.write('<td>' + y +'</td>');
+		document.write('<td>toString(2)</td>');
+		document.write('<td>' + y.toString(2) + '</td>');
+		document.write('<td>возвращает строковое представление числа в двоичной системе исчисления</td>');
+		document.write('</tr>');
+	</script>
+</table>
+</body>
+</html>

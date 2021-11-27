@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>"2 задание"</title>
+		<style>
+		table{
+			border:none;
+			text-align: center;
+			border-collapse: collapse;
+		}
+		td{
+			border:2px solid green;
+		}
+		tr:first-child, td:first-child
+		{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<table width="100%" align="center">
+		<script type="text/javascript">
+			
+				let num1 = prompt('Введите 1 число: ');
+				let num2 = prompt('Введите 2 число: ');
+				for ( i = 1; i <= num1; i++)
+				 	{
+					document.write('<tr>');
+					for ( j = 1; j <= num2; j++)
+					 	{
+					document.write('<td>' + ( i * j ) + '</td>');
+				 		}	
+				 	document.write('</tr>');
+					}
+					
+		</script>
+	</table>
+</body>
+</html>

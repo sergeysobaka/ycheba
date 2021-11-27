@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+color:purple;
+border:solid green 2px;
+font-size:30px;
+}
+
+
+</style>
+<script>
+'use strict'
+let spreadArray = [1,2,3,4,5];
+console.log(...spreadArray);
+let arr = new Array('pow', 'pop', 'push', 'shift', 'round', 'floor', 'slice', 'sort')
+let one = new Array(arr.slice(1, 4), arr.pop())
+let two = new Array('sort', arr.shift(), arr.slice(3,8),)
+one.push('abc')
+document.write(arr + '<br>')
+document.write(one + ' ' + one.length + '<br>')
+document.write(two + ' ' + two.length)
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

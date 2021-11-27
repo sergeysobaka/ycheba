@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+color:orange;
+font-size:90px;
+
+}
+</style>
+<script>
+'use strict'
+let ypr1 = []
+let arr = []
+let max = 0
+let min = 0
+ypr1[0] = ((6 * Math.pow(Math.PI, 2)) + (3 * Math.exp(8)))
+ypr1[1] = (2 * Math.cos(4) + Math.cos(12) + 8 * Math.exp(3))
+ypr1[2] = (3 * Math.sin(9) + Math.log(5) + Math.sqrt(3))
+ypr1[3] = (2 * Math.tan(5) + 6 * Math.PI + Math.sqrt(12))
+document.write(ypr1[0] + '<br>')
+document.write(ypr1[1] + '<br>')
+document.write(ypr1[2] + '<br>')
+document.write(ypr1[3] + '<br>')
+for (let i = 1; i < ypr1.length; i++) {
+if (ypr1[i] > ypr1[max]) {max = i}
+if (ypr1[i] < ypr1[min]) {min = i}
+}
+document.write(ypr1[max] + '<br>')
+document.write(ypr1[min] + '<br>')
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type='text/javascript'>
+		// Функция выводит текст на страницу
+		//глобальные клиентские пользовательские встроенные
+		function exercise1() {
+			alert('Вас приветствует учебный центр')
+			let name = prompt('Введите Ваше имя:', 'Имя')
+			alert('Добро пожаловать на наши курсы, ' + name)
+			let vibor = confirm('Хотите стать Web-дизайнером?');
+			if (vibor) {
+				alert('Учите стили CSS и JavaScript');
+			}
+			else {
+				alert('Упускаете время!');
+			}
+		}
+		function exercise2() {
+			alert(10 + 5);
+			alert('10' + '5');
+			alert(22 + '5');
+			alert('22' + 5);
+			alert('Результатом сложения строки и числа всегда будет строка');
+		}
+		function exercise3() {
+			let x = prompt('Введите х ');
+			let y = prompt('Введите y ');
+
+			document.write('Результат первого выражения : ' + x * y * 15 + '<p>');
+			let z = x * y * 15;
+			alert(z);
+			document.write('Результат второго  выражения : ' + x * y * 2 + '<p>');
+			let w = x * y * 2;
+			alert(w);
+			let r = z % w;
+			alert(r);
+			document.write('Результат второго  выражения : ' + r);
+		}
+		function exercise4() {
+			let num1 = prompt('Введите число ');
+      if (num1 > 40 || num1 < 20 && num1 != 15 && num1 % 5 == 0) {
+         alert('Правильно')
+      }
+      else {
+         alert('Неправильно');
+      }
+      let choice = confirm('Да или нет');
+      if (choice) {
+         let operator = prompt('Если больше 5 то выведется окно');
+         if (operator >= 5) {
+            alert('То самое окно');
+         }
+         else {
+            alert('Нету тут никакого окна');
+         }
+      }
+      else {
+         alert('Ну нет так нет');
+      }
+		}
+		function exercise5() {
+			let first = prompt('Введи первое число');
+			let second = prompt('Введи второе число');
+			if (first > second) alert(`${first} больше ${second}`);
+			else if (first < second) alert(`${first} меньше ${second}`);
+			else alert(`${first} равно ${second}`);
+
+			(first > second) ? alert(`${first} больше ${second}`) : ((first < second) ? alert(`${first} меньше ${second}`) : alert(`${first} равно ${second}`));
+		}
+		function exercise6() {
+			let day = new Date().getDay();
+			switch (day) {
+				case 1: alert('Понедельник'); break;
+				case 2: alert('Вторник'); break;
+				case 3: alert('Среда'); break;
+				case 4: alert('Четверг'); break;
+				case 5: alert('Пятница'); break;
+				case 6: alert('Суббота'); break;
+				case 0: alert('Воскресенье'); break;
+				default: alert('неопределенное значение');
+			}
+
+		}
+		function exercise7() {
+			try {
+				{ alerttt('Ошибка в alert'); }
+
+			}
+			catch (error) {
+				alert('error');
+			}
+			try {
+				{ alert('В коде имеется ошибка'); }
+
+			}
+			catch (error) {
+				alert('error');
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<DIV>
+		<p>Задание 1</p><br>
+	</DIV>
+	<div>
+		<input type='button' value='1 zad' onclick='exercise1()' />
+		<input type='button' value='2 zad' onclick='exercise2()' />
+		<input type='button' value='3 zad' onclick='exercise3()' />
+		<input type='button' value='4 zad' onclick='exercise4()' />
+		<input type='button' value='5 zad' onclick='exercise5()' />
+		<input type='button' value='6 zad' onclick='exercise6()' />
+		<input type='button' value='7 zad' onclick='exercise7()' />
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		table{
+			border:none;
+			text-align: center;
+			border-collapse: collapse;
+		}
+		td{
+			border:2px solid green;
+		}
+		tr:first-child
+		{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		let num1=prompt('Напиши начальный радиус');
+		radius = new Number(num1);
+		let num2=prompt('Kонечный радиус');
+	
+		radius2 = new Number(num2);
+	</script>
+<table>
+	<script type="text/javascript">
+		document.write('<tr>');
+		document.write('<td>Радиус</td>');
+		document.write('<td>Площадь круга</td>');
+		document.write('<td>Длина окружности</td>');
+		document.write('</tr>');
+		do {
+document.write('<tr>'	);
+document.write('<td>' +  radius.toFixed(2) + '</td>');
+document.write('<td>' + (radius * radius * Math.PI).toFixed(2) + '</td>');
+document.write('<td>' + (radius * Math.PI * 2).toFixed(2) + '</td>');
+document.write('</tr>');
+radius=radius+0.3;
+if (radius> radius2)
+ 	{
+ 		document.write('<tr>');
+		document.write('<td>' +  radius2.toFixed(2) + '</td>');
+		document.write('<td>' + ( radius2 *  radius2 * Math.PI).toFixed(2) + '</td>');
+		document.write('<td>' + ( radius2 * Math.PI * 2).toFixed(2) + '</td>');
+		document.write('</tr>');
+	}
+		} while (radius < radius2);
+	</script>
+</table>
+
+</body>
+</html>
