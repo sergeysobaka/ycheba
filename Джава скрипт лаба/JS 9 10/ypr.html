@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ypr</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		p {font-size: 20px;
+			letter-spacing: 5px;
+			color: black;
+			transform: rotate();}
+	</style>
+</head>
+<body>
+	<p id="p1" style="position: absolute;">GH</p>
+</body>
+<script type="text/javascript">
+	x1 = 0; y1 = 0;c = 0;
+	function Jsins() {
+		if ((x1 < 500) && (c % 2 === 0)) {x1 += 10;}
+		if ((x1 > 50) && (c % 2 === 1)) {x1 -= 10;}
+		if ((x1 === 500) || (x1 === 50)) {c++}
+		y1 = Math.sin(x1) * 50;
+		p1.innerHTML = '<p style="position: absolute; top:' + y1 +'px; left:' + x1 + 'px;transform: rotate(' + x1 + 'deg);">ДАЙТЕ ДОСПУСК, ПОЖАЛУЙСТААААААААА</p>';
+	}
+	setInterval('Jsins()', 100);
+</script>
+</html>

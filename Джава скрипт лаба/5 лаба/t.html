@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.azaza {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+<p id="1"> 1 ujuu</p> |fffff| <p class="azaza">2 JJOJ</p> <p class="azaza">33333333333333333333333</p>
+</body>
+
+
+<script type="text/javascript">
+document.write('<br>');
+document.write('<br>');
+document.write('<br>');
+document.write('Вывод: ');
+document.write('<br>');
+
+			f = document.getElementById("1")
+			document.write(f.innerHTML)
+			
+			document.write('<br>');
+
+			s = document.getElementsByTagName('p')[1]
+			document.write(s.innerHTML)
+		
+
+
+ var azaza = document.getElementsByClassName('azaza');
+
+let kol = 0;
+			for(var i=0; i<document.all.length; i++) {
+				var child = document.all[i]
+				if ((kol != 2) && (child.className == 'azaza')){
+					document.write('<br>'+child.innerHTML)
+					kol++
+					}
+				}
+				
+
+</script>
+</html>

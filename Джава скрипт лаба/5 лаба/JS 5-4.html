@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>JS 5-4</TITLE>
+		<meta charset="utf-8">
+		
+	</HEAD>
+	<BODY>
+		<h1 align="center"><font color="red"> Я, <a href="Лаба%2011.2.html">Гомельский Сергей Сергеевич</a>, изучаю <font color="green">HTML</font> и CSS</font></h1>
+		<h2 align="center"><b><font color="blue">Задание 1</font></b></h2>
+		<h3 align="center"><b>Тег .span.</b></h3>
+		<p><font size="4"; color="green"><i>Тег <span style="color: red">.span.</span> предназначен для определения строчных элементов документа. В отличие от блочных элементов, таких как .table., .p. или .div., с помощью тега <span style="color: red">.span.</span> можно выделить часть информации внутри других тегов и установить для нее свой стиль. Например, внутри абзаца (тега .p.) можно изменить цвет и размер первой буквы, если добавить начальный и конечный тег <span style="color: red">.span.</span> и определить для него стиль текста.</i></font></p>
+		<h3 align="center"><b>Тег .div.</b></h3>
+		<p><font size="3"; color="purple"><i>Тег <span style="color: red">.div.</span> является блочным элементом и предназначен для выделения фрагмента документа с целью изменения вида содержимого. Как правило, вид блока управляется с помощью стилей.</i></font></p>
+		<h3 align="center"><b>Вставка изображений</b></h3>
+		<p><font size="4"; color="grey"><i>Для добавления в HTML документ изображений используется тэг <span style="color: red">.img.</span> Атрибут src тэга <span style="color: red">.img.</span> должен содержать адрес, по которому находится картинка, которая должна быть отображена.</i></font></p>
+		<p></p>
+		<h2 align="center"><b><font size="6">Список</font></b></h2>
+		<ol>
+			<li>Элемент 1
+				<ul type="disc">
+					<li>Элемент 1.1</li>
+					<li>Элемент 1.2</li>
+				</ul>
+			</li>
+			<li>Элемент 2
+				<ul type="square">
+					<li>Элемент 2.1</li>
+					<li>Элемент 2.2</li>
+					<li>Элемент 2.3</li>
+				</ul>
+			</li>
+			<li>Элемент 3
+				<ul>
+					<li>Элемент 3.1</li>
+					<li>Элемент 3.2</li>
+				</ul>
+			</li>
+		</ol>
+		<p></p>
+		<h2 align="center">Заголовок таблицы</h2>
+		<table border="2">
+			<tr>
+				<td>ФИО</td>
+				<td colspan="3"><a href="Лаба%2011.2.html">Иванов Иван Иванович</a></td>
+			</tr>
+			<tr>
+				<td>Свое фото</td>
+				<td colspan="3">Адрес: ул.Белорусская, д.5,ком.430</td>
+			</tr>
+			<tr>
+				<td rowspan="6">1 семестр 2016/2017 уч. года</td>
+				<td>Дата</td>
+				<td>Предмет</td>
+				<td>Оценка</td>
+			</tr>
+			<tr>
+				<td>31.12.2016</td>
+				<td>ОАиП</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>5.01.2017</td>
+				<td>Физика</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>11.01.2017</td>
+				<td>ОИТ</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>16.01.2017</td>
+				<td>Математика</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>22.01.2017</td>
+				<td>АЛОЦВМ</td>
+				<td>4</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			let kol = 0;
+			for(var i=0; i<document.all.length; i++) {
+				var child = document.all[i];
+				if ((child.innerHTML < 11) && (child.tagName == 'TD')){
+					kol += Number(child.innerHTML);
+					}
+				}
+				kol /= 5;
+				document.write(kol)
+				pam = document.getElementsByTagName('span')[1]
+				pam.innerHTML += kol;
+		</script>
+	</BODY>
+</HTML>

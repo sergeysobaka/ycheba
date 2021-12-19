@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS 8</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<p id="p1">Изменение цвета</p>
+		<p id="p2">Изменение размера</p>
+		<img src="Cat1.png" id="img1">
+		<div id="div1">Замена на картинку</div>
+		<img src="Img2.gif" id="img2">
+		<p id="p3" style="position: absolute;">Любой абзац</p>
+	</body>
+	<script type="text/javascript">
+		p1.onmouseover = function() {
+			p1.style.color = 'red';
+		}
+		p1.onmouseout = function() {
+			p1.style.color = 'black';
+		}
+
+		var k = 0;
+		p2.onclick = function() {
+			k++;
+			if (k % 2 === 1) {
+				p2.style.fontSize = '25px';
+			}
+			else {p2.style.fontSize = '16px'}
+		}
+
+		var chek = 0;
+		img1.onclick = function() {
+			chek++;
+			if (chek % 2 === 1) {
+				img1.src = 'Cat2.gif';
+			}
+			else {
+				img1.src = 'Cat1.png';
+			}
+		}
+
+		var dv = 0;
+		div1.onclick = function() {
+			dv++;
+			if (dv % 2 === 1) {
+				div1.innerHTML = '<img src="Div1.png">'; 
+			}
+			else {
+				div1.innerHTML = '<div>Замена на картинку</div>'; 
+			}
+		}
+
+		img2.onmouseover = function() {
+			img2.style.width = '150px';
+		}
+		img2.onmouseout = function() {
+			img2.style.width = '112px';
+		}
+
+		p3.ondblclick = function() {
+			p3.style.border = '5px green solid';
+		}
+		</script>
+</html>

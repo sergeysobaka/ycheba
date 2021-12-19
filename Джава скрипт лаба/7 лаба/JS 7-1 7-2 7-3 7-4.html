@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS 7-1 7-2 7-3 7-4</title>
+
+</head>
+<body>
+
+	<form>
+		<fieldset>
+			<textarea style="width:200px" name="IT">Факультет информационных технологий</textarea><br><br>
+			<input type="text" name="secondname" value="Фамилия"><br>
+			<input type="text" name="firstname" value="Имя"><br><br>
+			<p>Специальность
+			<select name="spec">
+				<option>ПОИТ</option>
+				<option>ИСиТ</option>
+				<option>ПОИБМС</option>
+				<option>ДЭВИ</option>
+			</select></p>
+			<p>Курс</p>
+			<p><input type="radio" name="kurs" value="1">1 <input type="radio" name="kurs" value="2">2 <input type="radio" name="kurs" value="3">3 <input type="radio" name="kurs" value="4">4 </p>
+			<p><input type="checkbox" name="item" value="ОИТ">ОИТ <input type="checkbox" name="item" value="ОАП">ОАП <input type="checkbox" name="item" value="История">История <input type="checkbox" name="item" value="Физика">Физика <input type="checkbox" name="item" value="Математика">Математика </p>
+			<br>
+			<input type="submit" name="submit">
+			<input type="reset" name="reset"><br><br>
+			<input type="button" name="printer" value="Напечатать" onclick="printe()">
+		</fieldset>
+	</form>
+	<form><fieldset><legend>Ваш любимый мультфильм</legend>
+		<p>Название мультфильма: <input type="text" name="nam"> </p>
+		<p>От какого издателя: <input type="radio" name="myl" value="Dreamworks Pictures">Dreamworks Pictures <input type="radio" name="myl" value="Союз Мультфильм">Союз Мультфильм <br><input type="radio" name="myl" value="Мультсериалы">Мультсериалы <input type="radio" name="myl" value="Pixar Animation Studios">Pixar Animation Studios </p>
+		<p>Наличие оскара <input type="checkbox" name="chec" value="Да">Да <input type="checkbox" name="chec" value="Нет">Нет </p>
+		Главный герой мультфильма:
+		<input type="text" name="pr"><br>
+		<p>Сколько частей мультфильма создано:
+		<input type="radio" name="rad" value="1">1
+		<input type="radio" name="rad" value="2">2
+		<input type="radio" name="rad" value="3">3
+		<input type="radio" name="rad" value="больше 3">Больше 3
+		</p>
+		<p>Главный герой борется за:</p><select multiple="4" name="sel">
+			<option>Добро</option>
+			<option>Зло</option>
+			<option>Любовь</option>
+			<option>Дружбу</option>
+		</select>
+		<p>В кратце о сюжете:</p><textarea name="gd"></textarea>
+	</fieldset></form>
+</body>
+<script type="text/javascript">
+		
+
+		function printe() {
+			
+			per = ''; vto = 0;
+			for (var i = 0; i < 2; i++) {
+				if (document.forms[1].chec[i].checked) {vto += 1
+					che = document.forms[1].chec[i].value}
+			}
+		if (vto === 2) {che = 'выбран неправильный ответ'}
+			for (var u = 0; u < 5; u++) {
+				if (document.forms[0].item[u].checked) {per += ('<li>' + document.forms[0].item[u].value + '</li>')}
+			}
+			p = ('<form><fieldset><legend>' + document.forms[1].nam.value + '</legend><p>' + document.forms[1].myl.value + ' издатель</p><p>Наличие оскара: ' + che + '</p><p>' + document.forms[1].pr.value + ' главный герой мультфильма</p><p>Всего создано ' + document.forms[1].rad.value + ' частей мультфильма</p><p>В своих приключениях ' + document.forms[1].pr.value + ' борется за: ' + document.forms[1].sel[0].value + ', ' + document.forms[1].sel[3].value + '</p><p>Сюжет повествует нам: ' + document.forms[1].gd.value + ' </p></fieldset></form>')
+			document.write('<h3 align=center>' + document.forms[0].IT.value + '</h3>' + '<br>' + 'Студент ' + document.forms[0].secondname.value + ' специальность ' + document.forms[0].spec.value + ' курс ' + document.forms[0].kurs.value + ' должен сдавать следующие предметы: ' + '<ul>' + per + '</ul>')
+			document.write(p)
+		}
+		/*У Шрека и Фионы — медовый месяц. Они получают послание от родителей Фионы — короля и королевы Тридевятого королевства. Фиона уговаривает мужа поехать, утверждая, что родители будут рады их видеть, и в конце концов они оставляют дом на попечение «сказочных существ», берут Осла и уезжают на своей карете-луковице.*/
+	</script>
+</html>

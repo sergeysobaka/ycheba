@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS 11-8</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<p id="p1">Изменение цвета</p>
+		<p id="p2">Изменение размера</p>
+		<img src="Cat1.png" id="img1">
+		<div id="div1">Замена на картинку</div>
+		<img src="Img2.gif" id="img2">
+		<p id="p3" style="position: absolute;">Любой абзац</p>
+	</body>
+	<script type="text/javascript">
+
+//1//
+		$('#p1').mouseover(function() {$('#p1').css('color', 'red')})
+		$('#p1').mouseout(function() {$('#p1').css('color', 'black')})
+
+//2//
+		var k = 0;
+		$('#p2').click(function() {
+			k++;		
+			if (k % 2 === 1) {
+			$('#p2').css('font-size', '50px')
+			}
+			else {$('#p2').css('font-size', '16px')}
+		})
+
+//3//
+		var chek = 0;
+		$('#img1').click(function() {
+			chek++;
+			if (chek % 2 === 1) {
+				$('#img1').attr('src', 'Cat2.gif').css('border', '5px green solid');
+			}
+			else {$('#img1').attr('src', 'Cat1.png').css('border', '5px white solid');
+			}
+		})
+
+//4//
+		var dv = 0;
+		$('#div1').mouseover(function() {
+			dv++;
+			if (dv % 2 === 1) {
+				$('#div1').html('<img src="Div1.png">')
+			}
+			else {
+				$('#div1').html('<p>Замена на картинку</p>')
+			}
+
+		})
+
+//5//
+		$("#img2").mouseover(function() {$('#img2').css('width', '250px')})
+		$("#img2").mouseout(function() {$('#img2').css('width', '112px')})
+
+
+//6
+		$('#p3').dblclick(function() {$('#p3').css('border', '5px green solid')})
+		</script>
+</html>

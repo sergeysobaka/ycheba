@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function Student(name, surname, fiz, math, inform) {
+			this.name = name;
+			this.surname = surname;
+			this.fiz = fiz;
+			this.math = math;
+			this.inform = inform;
+			this.nsn = function nsn() {
+				alert('Это ' + this.name + ' ' + this.surname);
+			}
+			this.score = function score() {
+				mark = (this.fiz + this.math + this.inform) / 3;
+				alert('Средний балл ' + mark.toFixed(2));
+			}
+		}
+		stu1 = new Student('Сергей', 'Скорина', 4, 4, 8);
+		stu2 = new Student('Федор', 'Пелсудский', 4, 4, 4);
+		stu3 = new Student('Александр', 'Модель', 6, 4, 7);
+
+		Student.prototype.kurs = this.kurs;
+			this.kurs = 3;
+		document.write("Это " + this.kurs + " курс" + '<br>');
+		
+		
+
+		document.write('name = ' + (stu1.name in stu1) + '<br>');
+		document.write('Student = ' + (typeof Student) + '<br>');
+	</script>
+</head>
+<body>
+	<input type="button" value="ФИ1" onclick="stu1.nsn()">
+	<input type="button" value="СР1" onclick="stu1.score()"><br>
+	<input type="button" value="ФИ2" onclick="stu2.nsn()">
+	<input type="button" value="СР2" onclick="stu2.score()"><br>
+	<input type="button" value="ФИ3" onclick="stu3.nsn()">
+	<input type="button" value="СР3" onclick="stu3.score()"><br>
+</body>
+</html>

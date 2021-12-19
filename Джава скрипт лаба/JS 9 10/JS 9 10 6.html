@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS 9/10 6</title>
+		<style type="text/css">
+			@-webkit-keyframes anim {
+			0% {background-color:cyan;}
+			30% {background-color:#6de8e6;}
+			60% {background-color:#66CDAA;}
+			100% {background-color:cyan;}
+			}
+
+			.menu-item{
+			border: 2px soild #66CDAA;
+			display: inline-block;
+			position: relative;
+			cursor: pointer;
+			animation: anim 8s infinite;
+			margin: 15px;
+			
+			}
+			.menu-item .submenu{
+			height: 40px;
+			width: 120;
+			position: absolute;
+			cursor: pointer;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="nav">
+			<div class="menu-item">
+			 Меню 1
+			<div class="submenu">
+			Хихи
+			</div></div>
+			<div class="menu-item">
+			 Меню 2
+			<div class="submenu">
+			Хаха
+			</div></div>
+			<div class="menu-item">
+			 Меню 3
+			<div class="submenu">
+		 	Хехе
+			</div></div>
+		</div>
+
+	</body>
+	
+	<script type="text/javascript">
+		document.getElementById('nav').onmouseover = function(){
+			//отслеживает нахождение мыши внутри блока
+			var target = event.target;
+			//отслеживаем клик
+			if (target.className == 'menu-item'){
+				var s = target.getElementsByClassName('submenu');
+				closeMenu();
+				s[0].style.display='block';
+				//массив, содержащий ложное меню
+			}
+		}
+		document.onmouseover=function(){
+		var target = event.target;
+		//console.log(event.target);
+		if (target.className!='menu-item' &&
+			target.className!='submenu'){
+			closeMenu();
+			}
+		}
+		function closeMenu(){
+		//получение всех элементов подменю в блоке nav, присваивание
+		//display:none
+		//var menu = document.getElementById('nav');
+		var subm=document.getElementsByClassName('submenu');
+		for (var i=0; i < subm.length; i++){
+			subm[i].style.display = 'none';
+			}
+		}
+
+
+	</script>
+</html>

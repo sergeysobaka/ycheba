@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS 11-9</title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		<textarea id="ta1" style="position: absolute; width: 100px; height: 100px;"></textarea>
+		<br><br><br><br><br><br><br>
+		<img src="Img1.jpg" id="img1" style="position: absolute;">
+		<br><br><br><br><br><br><br>
+		<img src="Img2.gif" id="img2" style="position: absolute;">
+		<br><br><br><br><br><br><br>
+		<p id="Img3"></p>
+		<br><br><br><br><br><br><br>
+		<form>
+			<fieldset>
+				<input type="radio" name="fun" value="y=x*x">y=x*x
+				<input type="radio" name="fun" value="y=x*x*x">y=x*x*x
+				<input type="radio" name="fun" value="y=Sin(x)">y=Sin(x)
+				<input type="radio" name="fun" value="y=Cos(x)">y=Cos(x) 
+				<select name="color">
+					<option>Black</option>
+					<option>Red</option>
+					<option>Green</option>
+				</select>
+				<br><br>
+				<input type="button" value="Нарисовать" onclick="PR()">
+			</fieldset>
+		</form>
+	</body>
+	<script type="text/javascript">
+		$('#ta1').mousedown(function() {$('#ta1').mousemove(function() {
+			$('#ta1').css('left', (event.clientX - 50));
+			$('#ta1').css('top', (event.clientY - 40));
+			})})
+		$('#ta1').mouseup(function() {$('#ta1').mousemove(function() {
+			$('#ta1').css('left', 100);
+			$('#ta1').css('top', 100);
+		})})
+
+		$('#img1').mousedown(function() {$('#img1').mousemove(function() {
+			Ox = event.clientX - 50;
+			Oy = event.clientY - 40;
+			$('#img1').css('left', Ox);
+			$('#img1').css('top', Oy);
+			})})
+		$('#img1').mouseup(function() {$('#img1').mousemove(function() {
+			$('#img1').css('left', 200);
+			$('#img1').css('top', 200);
+		})})
+
+		OxI2 = 0; O = '';
+
+		function IG2() {
+			if (OxI2 < 800) {
+			OxI2 += 10;
+			$('#img2').css('left', OxI2)
+		}}
+		setInterval("IG2()", 10)
+
+
+		tp = 50; lf = 50; lfO = 0;
+		function curve() {
+			if ((lf < 500) && (lfO % 2 === 0)) {lf += 10;}
+			if ((lf > 50) && (lfO % 2 === 1)) {lf -= 10;}
+			if ((lf === 500) || (lf === 50)) {lfO++;} 
+			tp = Math.sin(lf) * 50;
+			Img3.innerHTML = '<img src="Img2.gif" width="60px" STYLE="position: absolute; top: ' + tp + 'px; left: ' + lf + 'px">'
+		}
+		setInterval("curve()", 150)
+
+
+		function PR() { x1 = 1; y1 = 0; dot = 'dotb.png';
+			if (document.forms[0].color.value === 'Green') {dot = 'dotg.png'}
+			if (document.forms[0].color.value === 'Red') {dot = 'dotr.png'}
+			per = document.forms[0].fun.value;
+			document.write(per);
+			if (per === ('y=x*x')) {
+				for (var i = 0; i < 100; i++) {
+					x1++;
+					y1 = 900 - (x1 * x1);
+					document.write('<img src="' + dot + '" style="position: absolute; top:' + y1 + 'px; left:' + x1 + 'px; width: 8px">')
+				}
+			}
+			if (per === ('y=x*x*x')) {
+				for (var i = 0; i < 100; i++) {
+					x1++;
+					y1 = 900 - (x1 * x1 * x1);
+					document.write('<img src="' + dot + '" style="position: absolute; top:' + y1 + 'px; left:' + x1 + 'px; width: 10px">')
+				}
+			}
+			if (per === ('y=Sin(x)')) {
+				for (var i = 0; i < 500; i++) {	
+					x1++;
+					y1 = Math.sin(x1) * 3 + 100;
+					document.write('<img src="' + dot + '" style="position: absolute; top:' + y1 + 'px; left:' + x1 + 'px; width: 4px">')
+				}
+			}
+			if (per === ('y=Cos(x)')) {
+				for (var i = 0; i < 500; i++) {
+					x1++;
+					y1 = Math.cos(x1) * 3 + 100;
+					document.write('<img src="' + dot + '" style="position: absolute; top:' + y1 + 'px; left:' + x1 + 'px; width: 4px">')
+				}
+			}
+		}
+		
+
+	</script>
+</html>

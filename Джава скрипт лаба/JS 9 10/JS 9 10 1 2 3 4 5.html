@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS 9/10 1 2 3 4 5</title>
+		<style type="text/css">
+			div {
+				border: 5px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea id="ta1" style="position: absolute; width: 100px; height: 100px;"></textarea>
+		<br><br><br><br><br><br><br>
+		<img src="Img1.jpg" id="img1" style="position: absolute;">
+		<br><br><br><br><br><br><br>
+		<img src="Img2.gif" id="img2" style="position: absolute;">
+		<br><br><br><br><br><br><br>
+		<p id="Img3"></p>
+		<br><br><br><br><br><br><br>
+		<form>
+			
+				<input type="radio" name="fun" value="y=x*x">y=x*x
+				<input type="radio" name="fun" value="y=x*x*x">y=x*x*x
+				<input type="radio" name="fun" value="y=Sin(x)">y=Sin(x)
+				<input type="radio" name="fun" value="y=Cos(x)">y=Cos(x) 
+				<select name="color"><option>Black</option><option>Red</option><option>Green</option></select><br><br>
+				<input type="button" value="Нарисовать" onclick="PR()">
+		
+		</form>
+	</body>
+	<script type="text/javascript">
+		ta1.onmousedown = function(){
+			ta1.onmousemove = function(){
+			OxT = (event.clientX - 50) + 'px';
+			OyT = (event.clientY - 40) + 'px';
+			ta1.style.left = OxT;
+			ta1.style.top = OyT;
+		}}
+		ta1.onmouseup = function(){
+			ta1.onmousemove = function(){}
+		}
+
+
+		img1.onmousedown = function(){
+			img1.onmousemove = function(){
+			OxI = (event.clientX - 50) + 'px';
+			OyI = (event.clientY - 40) + 'px';
+			img1.style.left = OxI;
+			img1.style.top = OyI;
+		}}
+		img1.onmouseup = function(){
+			img1.onmousemove = function(){}
+		}
+
+
+		OxI2 = 0; O = '';
+		function IG2() {
+			if (OxI2 < 800) {
+			OxI2 += 10;
+			O = OxI2 + 'px';
+			img2.style.left = O;
+		}}
+		setInterval("IG2()", 10)
+
+
+		tp = 50; lf = 50; lfO = 0;
+
+		function curve() {
+			if ((lf < 500) && (lfO % 2 === 0)) {lf += 10;}
+			if ((lf > 50) && (lfO % 2 === 1)) {lf -= 10;}
+			if ((lf === 500) || (lf === 50)) {lfO++;} 
+			tp = Math.sin(lf) * 50;
+			Img3.innerHTML = '<img src="Img2.gif" width="60px" STYLE="position: absolute; top: ' + tp + 'px; left: ' + lf + 'px">'
+		}
+		setInterval("curve()", 100)
+
+
+		function PR() { x1 = 0; y1 = 0; dot = '1.jpg'; y2 = 0; x2 = 1;
+			if (document.forms[0].color.value === 'Green') {dot = '2.png'}
+			if (document.forms[0].color.value === 'Red') {dot = '3.png'}
+			per = document.forms[0].fun.value;
+			document.write(per);
+			document.write('<hr size="1px" color="black" style="margin-top: ' + 875 + 'px">')
+			document.write('<div style="border-left: 1px solid black; position: absolute; left: 300px; top: 0; height: 1000px; color: white;">1</div>')
+			if (per === ('y=x*x')) {
+				for (var i = 0; i < 100; i++) {
+					y1 = 900 - (x1 * x1);
+					y2 = 900 - (x2 * x2)
+					x1++; x2++;
+					if (y1 > 50) {for (var u = y1; (u > y2); u--) {
+						document.write('<img src="' + dot + '" style="position: absolute; top:' + (u) + 'px; left:' + (x1 + 300) + 'px; width: 2px">')
+						document.write('<img src="' + dot + '" style="position: absolute; top:' + u + 'px; left:' + (300 - x1) + 'px; width: 2px">')}
+					}
+				}
+			}
+			if (per === ('y=x*x*x')) {
+				for (var i = 0; i < 100; i++) {
+					
+					y1 = 900 - (x1 * x1 * x1);
+					y2 = 900 - (x2 * x2 * x2);
+					x1++; x2++;
+					if (y1 > 100) {
+					for (var u = y1; u > y2; u--) {
+						document.write('<img src="' + dot + '" style="position: absolute; top:' + u + 'px; left:' + (x1 + 300) + 'px; width: 2px">')
+						document.write('<img src="' + dot + '" style="position: absolute; top:' + u + 'px; left:' + (300 - x1) + 'px; width: 2px">')
+					}}
+				}
+			}
+			if (per === ('y=Sin(x)')) {
+				for (var i = 0; i < 600; i++) {	
+					y1 = 900 - Math.sin(x1) * 10;
+					y2 = 900 - Math.sin(x2) * 10;
+					x1++; x2++;
+					if (y1 > y2) {
+					for (var u = y1; u > y2; u--) {
+						document.write('<img src="' + dot + '" style="position: absolute; top:' + (u) + 'px; left:' + (x1 + 300) + 'px; width: 2px">')
+					}}
+					else {
+					for (var u = y1; u < y2; u++) {
+						document.write('<img src="' + dot + '" style="position: absolute; top:' + (u) + 'px; left:' + (x1 + 300) + 'px; width: 2px">')
+					}}
+						
+				}
+			}
+			if (per === ('y=Cos(x)')) {
+				for (var i = 0; i < 600; i++) {
+					y1 = 900 - Math.cos(x1) * 10;
+					y2 = 900 - Math.cos(x2) * 10;
+					x1++; x2++;
+					if (y1 > y2) {
+					for (var u = y2; u < y1; u++) {
+						document.write('<img src="' + dot + '" style="position: absolute; top:' + (u) + 'px; left:' + (x1 + 300) + 'px; width: 2px">')
+					}}
+					else {
+					for (var u = y1; u < y2; u++) {
+						document.write('<img src="' + dot + '" style="position: absolute; top:' + (u) + 'px; left:' + (x1 + 300) + 'px; width: 2px">')
+					}}
+				}
+			}
+		}
+		
+
+	</script>
+</html>
